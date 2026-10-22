@@ -1,0 +1,17 @@
+# Variant A: native openssh-server, if the agent machine has it
+# (or can install it: apt-get install -y openssh-server).
+# Start with: /usr/sbin/sshd -f /path/to/this/config  (absolute path required)
+# Replace REVSSH_DIR and REVSSH_USER placeholders (setup-a.sh does it).
+Port 2223
+ListenAddress 127.0.0.1
+HostKey REVSSH_DIR/host_ed25519
+PidFile REVSSH_DIR/sshd.pid
+AuthorizedKeysFile REVSSH_DIR/authorized_keys
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+PubkeyAuthentication yes
+AuthenticationMethods publickey
+PermitRootLogin no
+AllowUsers REVSSH_USER
+UsePAM no
+PrintMotd no

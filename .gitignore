@@ -1,0 +1,10 @@
+# Never commit keys, live config or logs
+tunnel.env
+authorized_keys
+host_ed25519
+host_ed25519.pub
+*.log
+venv/
+__pycache__/
+id_*
+*.pem
